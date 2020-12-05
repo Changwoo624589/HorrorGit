@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    bool keyItem;
+    public bool keyItem;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -78,10 +79,23 @@ public class PlayerController : MonoBehaviour
                 //drawer.OpenDrawer();
                 drawer.isOpened = !drawer.isOpened;
             }
-            if (hit.transform.tag == "Key" && Input.GetButtonDown("Fire1")) {
-                hit.transform.gameObject.SetActive(false);
-                keyItem = true;
+            /// Press Mouse1 or E
+            if (Input.GetButtonDown("Fire1")) {
+                if (hit.transform.tag == "Key")
+                {
+                    hit.transform.gameObject.SetActive(false);
+                    keyItem = true;
+                }
+                if (hit.transform.tag == "Door")
+                {
+                    if (hit.transform.GetComponent<Door>() != null)
+                    {
+                        hit.transform.GetComponent<Door>().DoorOpenClose();
+                    }
+                }
+
             }
+            
         }
         
         else { aim.color = new Color32(255, 255, 255, 40); }
