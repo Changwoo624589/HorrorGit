@@ -5,13 +5,19 @@ using UnityEngine;
 public class Desk : MonoBehaviour
 {
     public Drawer[] Drawers;
-    bool drawerUnlock;
+    public bool drawerUnlock;
+    public AudioClip[] sounds;
+    private AudioSource audioSource;
+
+    public GameObject player;
+    public PlayerController playerScript;
     void Start()
     {
         drawerUnlock = false;
+        audioSource = GetComponent<AudioSource>();
+        playerScript = player.GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!drawerUnlock)
@@ -32,5 +38,13 @@ public class Desk : MonoBehaviour
                 drawerUnlock = true;
             }
         }
+       
+    }
+
+    public void PlaySound(int num)
+    {
+            if (/*!audioSource.isPlaying &&*/ num == 0) { audioSource.PlayOneShot(sounds[0]); num = 3; }//open sound
+            if (/*!audioSource.isPlaying && */num == 1) { audioSource.PlayOneShot(sounds[1]); num = 3; }//closed sound
+
     }
 }
