@@ -1783,7 +1783,6 @@ GameObject:
   m_Component:
   - component: {fileID: 969655671}
   - component: {fileID: 969655670}
-  - component: {fileID: 969655672}
   m_Layer: 0
   m_Name: BunnyTest
   m_TagString: Untagged
@@ -1856,19 +1855,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 55.721, z: 0}
---- !u!114 &969655672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969655669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d59ff5aa5b841424b86100346e2c430c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 932870093}
 --- !u!1 &1064300261
 GameObject:
   m_ObjectHideFlags: 0
