@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.5f;
     public LayerMask groundMask;
-
+    
     bool isGrounded;
     //ray
     public Camera mainCam;
@@ -28,11 +28,12 @@ public class PlayerController : MonoBehaviour
     /// 
     /// </summary>
     public bool keyItem;
-
+    //public bool drawerB;
     void Start()
     {
         controller = GetComponent<CharacterController>();
         keyItem = false;
+      //  drawerB = false;
     }
 
     void Update()
@@ -70,14 +71,17 @@ public class PlayerController : MonoBehaviour
             aim.color = new Color32(255, 255, 255, 40);
             return;
         }
+
         if (hit.transform.gameObject.layer  == LayerMask.NameToLayer("Hitable")&& hitting)
         {
             Debug.Log(hit.transform.name);
             aim.color = new Color32(255, 200, 0, 255);
             Drawer drawer = hit.transform.GetComponent<Drawer>();
+           
             if (drawer != null && Input.GetButtonDown("Fire1")) {
-                //drawer.OpenDrawer();
+
                 drawer.isOpened = !drawer.isOpened;
+               
             }
             /// Press Mouse1 or E
             if (Input.GetButtonDown("Fire1")) {
