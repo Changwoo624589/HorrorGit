@@ -15,6 +15,9 @@ public class Door : MonoBehaviour
     public float aniSpeed;
 
     public bool locked;
+
+    private AudioSource audioS;
+    public AudioClip[] clips;
     //public Transform from;
     //public Transform to;
 
@@ -23,6 +26,7 @@ public class Door : MonoBehaviour
         tr = GetComponent<Transform>();
         ani = GetComponent<Animator>();
         playerScript = player.gameObject.GetComponent<PlayerController>();
+        audioS = GetComponent<AudioSource>();
       // from.rotation = tr.rotation;
       //  to.rotation = Quaternion.Euler(tr.rotation.eulerAngles.x, tr.rotation.eulerAngles.y + rotAngle, tr.rotation.eulerAngles.z);
         isOpened = false;
@@ -31,9 +35,9 @@ public class Door : MonoBehaviour
 
     void Update()
     {
-        if (locked && playerScript.keyItem){
+       /* if (locked && playerScript.keyItem){
             locked = false;
-        }
+        }*/
     }
 
 
@@ -45,8 +49,19 @@ public class Door : MonoBehaviour
     }
     public void DoorOpenClose()
     {
-
-        if (locked) return;
+        if (locked && playerScript.keyItem)
+        {
+            locked = false;
+            playerScript.keyItem = false;
+            Debug.Log("keyfalse");
+        }
+        if (locked) {
+            if (!audioS.isPlaying)
+            {
+                audioS.PlayOneShot(clips[0]);
+                ani.SetTrigger("DoorLocked");
+            }
+            return; } 
         if (!isOpened)
         {
             if (DotProduct() > 0)
@@ -67,8 +82,9 @@ public class Door : MonoBehaviour
                 Debug.Log("--d");
                 ani.Play("Door-1");
             }
-           
+
             //ani.SetTrigger("Door");
+
             isOpened = true;
         }
         else {
@@ -86,6 +102,7 @@ public class Door : MonoBehaviour
                 //  ani.Play("Door-1");
                 ani.SetTrigger("Door-1");
             }
+  
             isOpened = false;
 
         }

@@ -5,24 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    public CamLook camLook;
     void Start()
     {
-        
+        LoadButton();
     }
 
-    void Update()
-    {
-        
-    }
+
     public void StartButton() {
         SceneManager.LoadScene(1);
     }
     public void ResumeButton() {
         GameManager.Instance.Pause();
     }
-    public void PauseButton()
+    public void SaveButton()
     {
-        
+        SaveSystem.SaveSettings(camLook);
+        GameManager.Instance.Option();
+    }
+    public void LoadButton() 
+    {
+        PlayerData data = SaveSystem.LoadSettings();
+        camLook.mouseSensitivity = data._mouseSensitivity;
     }
     public void QuitButton() 
     {
@@ -32,7 +36,15 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
     public void RestartButton() {
+        GameManager.Instance.darkMode = false;
         GameManager.Instance.Pause();
         SceneManager.LoadScene(SceneManager.GetActiveScene().path);
+    }
+    public void OptionButton() 
+    {
+        GameManager.Instance.Option();
+    }
+    public void CancelButton() {
+        GameManager.Instance.Option();
     }
 }

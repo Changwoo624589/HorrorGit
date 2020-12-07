@@ -10,9 +10,11 @@ public class Drawer : MonoBehaviour
     public Vector3 closePos;
     public Desk deskScript;
 
-    public bool aaa;
+    private bool aaa;
     public int originInt;
     public int currentInt;
+    public bool isLocked;
+    
 
     void Start()
     {
@@ -27,7 +29,20 @@ public class Drawer : MonoBehaviour
 
     void Update()
     {
-        soundOn();
+        if (isLocked && isOpened)
+        {
+            deskScript.PlaySound(2);
+            deskScript.DrawerAni("5_Jiggling");
+            isOpened = false;
+        }
+        else if (!isLocked )
+        {
+            soundOn();
+            DrawerMovement();
+        }
+
+    }
+    private void DrawerMovement() {
         if (isOpened && aaa)
         {
             currentInt = 1;
@@ -39,39 +54,17 @@ public class Drawer : MonoBehaviour
             {
                 aaa = false;
             }
-            
+
             return;
         }
-        else {
+        else
+        {
             currentInt = 0;
 
             tr.localPosition = Vector3.MoveTowards(tr.localPosition, closePos, 3f * Time.deltaTime);
-           
+
             aaa = true;
         }
-    }
-    public void OpenDrawer(ref bool d) {
-        
-        if (d) //!isOpened
-        {
-            aaa = true;
-
-            Vector3 openPos = new Vector3(tr.position.x, tr.position.y, tr.position.z + 0.5f);
-            tr.position = Vector3.MoveTowards(tr.position, openPos, 5f * Time.deltaTime);
-
-
-            return;
-        }
-        else {
-            aaa = false;
-
-
-            tr.position = Vector3.MoveTowards(tr.position,closePos, 5f * Time.deltaTime);
-
-
-            return;
-        }
-
     }
     private void soundOn() {
         if (originInt != currentInt && currentInt == 1)
