@@ -54,7 +54,10 @@ public class TurnAround : MonoBehaviour
         {
             ChangeMaterials(darkWalls);
             StartCoroutine(Blink(flickerSpeed));  
-            sr.sprite = badbun; 
+
+            sr.sprite = badbun;
+
+            GameManager.Instance.darkMode = true;
         }
        
     }
