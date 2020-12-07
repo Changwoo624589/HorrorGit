@@ -78,13 +78,11 @@ public class PlayerController : MonoBehaviour
             aim.color = new Color32(255, 200, 0, 255);
             Drawer drawer = hit.transform.GetComponent<Drawer>();
            
-            if (drawer != null && Input.GetButtonDown("Fire1")) {
 
-                drawer.isOpened = !drawer.isOpened;
-               
-            }
             /// Press Mouse1 or E
             if (Input.GetButtonDown("Fire1")) {
+                if (drawer != null) 
+                { drawer.isOpened = !drawer.isOpened; }
                 if (hit.transform.tag == "Key")
                 {
                     hit.transform.gameObject.SetActive(false);

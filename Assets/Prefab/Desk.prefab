@@ -221,6 +221,9 @@ MonoBehaviour:
   isOpened: 0
   closePos: {x: 0, y: 0, z: 0}
   deskScript: {fileID: 919132147693194412}
+  originInt: 0
+  currentInt: 0
+  isLocked: 0
 --- !u!1 &755994630756762162
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +431,9 @@ MonoBehaviour:
   isOpened: 0
   closePos: {x: 0, y: 0, z: 0}
   deskScript: {fileID: 919132147693194412}
+  originInt: 0
+  currentInt: 0
+  isLocked: 0
 --- !u!1 &1540003598934231341
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,6 +545,9 @@ MonoBehaviour:
   isOpened: 0
   closePos: {x: 0, y: 0, z: 0}
   deskScript: {fileID: 919132147693194412}
+  originInt: 0
+  currentInt: 0
+  isLocked: 0
 --- !u!1 &2929822635534664230
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,6 +559,7 @@ GameObject:
   - component: {fileID: 2585913388261513372}
   - component: {fileID: 919132147693194412}
   - component: {fileID: 4953552266952513059}
+  - component: {fileID: 2097873988}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -605,6 +615,9 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: fd6ac912f311ed64f8b02b57c5ab3a3e, type: 3}
   - {fileID: 8300000, guid: 1f6229f3871449944b001c56eb0eb023, type: 3}
+  - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
+  player: {fileID: 0}
+  playerScript: {fileID: 0}
 --- !u!82 &4953552266952513059
 AudioSource:
   m_ObjectHideFlags: 0
@@ -615,10 +628,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1f6229f3871449944b001c56eb0eb023, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -701,6 +714,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &2097873988
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929822635534664230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca1b0dffe05ac844e8e004d847170dc1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5203507774567431237
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +844,9 @@ MonoBehaviour:
   isOpened: 0
   closePos: {x: 0, y: 0, z: 0}
   deskScript: {fileID: 919132147693194412}
+  originInt: 0
+  currentInt: 0
+  isLocked: 0
 --- !u!1 &6187051876080241251
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +958,9 @@ MonoBehaviour:
   isOpened: 0
   closePos: {x: 0, y: 0, z: 0}
   deskScript: {fileID: 919132147693194412}
+  originInt: 0
+  currentInt: 0
+  isLocked: 0
 --- !u!1 &7345003946100589937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1072,9 @@ MonoBehaviour:
   isOpened: 0
   closePos: {x: 0, y: 0, z: 0}
   deskScript: {fileID: 919132147693194412}
+  originInt: 0
+  currentInt: 0
+  isLocked: 0
 --- !u!1 &7493792262651813628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,7 +1168,7 @@ MeshCollider:
   m_GameObject: {fileID: 7493792262651813628}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -1147,6 +1188,9 @@ MonoBehaviour:
   isOpened: 0
   closePos: {x: 0, y: 0, z: 0}
   deskScript: {fileID: 919132147693194412}
+  originInt: 0
+  currentInt: 0
+  isLocked: 1
 --- !u!1 &8653195784406471220
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,3 +1302,6 @@ MonoBehaviour:
   isOpened: 0
   closePos: {x: 0, y: 0, z: 0}
   deskScript: {fileID: 919132147693194412}
+  originInt: 0
+  currentInt: 0
+  isLocked: 0

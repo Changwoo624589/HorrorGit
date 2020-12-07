@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool win;
     public bool pause;
     public bool darkMode;
+    public bool option;
 
     public float fogDensityinDarkMode;
     public float fogDensityinBrightMode;
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour
         if (buildIndex == 0)
         {  Cursor.visible = true; Cursor.lockState = CursorLockMode.None; }
         else { Cursor.visible = false; Cursor.lockState = CursorLockMode.Locked; }
-        
+        darkMode = false;
     }
 
     public static GameManager Instance
@@ -51,10 +52,12 @@ public class GameManager : MonoBehaviour
         win = false;
         pause = false;
         darkMode = false;
+        option = false;
     }
 
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Q)) {
             darkMode = !darkMode;
         }
@@ -85,9 +88,19 @@ public class GameManager : MonoBehaviour
         { 
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         
-        Debug.Log("Cancel");
+        
+    }
+    public void Option() {
+        option = !option;
+        if (option)
+        {
+            Time.timeScale = 0.001f;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
     }
     private void DarkMode() {
 
