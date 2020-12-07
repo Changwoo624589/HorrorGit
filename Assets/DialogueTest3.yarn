@@ -1,0 +1,25 @@
+title: Start
+tags: 
+colorID: 0
+position: -217,-309
+---
+Testing words. 
+
+[[ answer: Okay. |okay]] ]]
+
+[[ answer: Don't. |no]] ]]
+===
+title: okay
+tags: 
+colorID: 0
+position: -543,11
+---
+Still testing.
+===
+title: no
+tags: 
+colorID: 0
+position: 85,0
+---
+Still doing it.
+===
