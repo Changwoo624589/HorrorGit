@@ -18,8 +18,9 @@ public class TurnAround : MonoBehaviour
 
     public Light reglight;
     public float flickerSpeed = 0.1f;
-    private float timer; 
+    private float timer;
 
+    public GameObject RopeBottom;
 
     // Update is called once per frame
     void Update()
@@ -33,6 +34,8 @@ public class TurnAround : MonoBehaviour
         {
             wallmesh[i].GetComponent<MeshRenderer>();
         }
+
+       
 
     }
 
@@ -58,6 +61,7 @@ public class TurnAround : MonoBehaviour
             sr.sprite = badbun;
 
             GameManager.Instance.darkMode = true;
+            RopeBottom.GetComponent<Rigidbody>().AddForce(transform.forward * 200, ForceMode.Acceleration);
         }
        
     }
