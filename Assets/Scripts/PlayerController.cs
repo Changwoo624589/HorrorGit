@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     
     public Image aim;
 
+    public GameObject panel; 
+
     /// <summary>
     /// 
     /// </summary>
@@ -96,6 +98,12 @@ public class PlayerController : MonoBehaviour
                     }
                 }
 
+                if(hit.transform.tag == "Paper")
+                {
+                        panel.SetActive(true);
+
+                }
+
             }
             
         }
@@ -103,4 +111,14 @@ public class PlayerController : MonoBehaviour
         else { aim.color = new Color32(255, 255, 255, 40); }
 
     }
+
+    //public void OpenPanel()
+    //{
+    //    if (panel != null)
+    //    {
+    //        bool isActive = panel.activeSelf;
+
+    //        panel.SetActive(!isActive);
+    //    }
+    //}
 }
