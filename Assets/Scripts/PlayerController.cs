@@ -83,8 +83,10 @@ public class PlayerController : MonoBehaviour
 
             /// Press Mouse1 or E
             if (Input.GetButtonDown("Fire1")) {
+               
                 if (drawer != null) 
                 { drawer.isOpened = !drawer.isOpened; }
+               
                 if (hit.transform.tag == "Key")
                 {
                     hit.transform.gameObject.SetActive(false);
@@ -101,9 +103,10 @@ public class PlayerController : MonoBehaviour
                 if(hit.transform.tag == "Paper")
                 {
                         panel.SetActive(true);
-
                 }
-
+                if (hit.transform.GetComponent<Frame>() != null) {
+                    hit.transform.GetComponent<Frame>().FrameAni();
+                }
             }
             
         }
