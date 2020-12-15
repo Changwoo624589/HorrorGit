@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(AudioSource))]
 public class Door : MonoBehaviour
 {
     public Transform player;
@@ -17,7 +17,7 @@ public class Door : MonoBehaviour
     public bool locked;
 
     private AudioSource audioS;
-    public AudioClip[] clips;
+    public AudioClip[] clips; //0-jiggle/1-unlock/2-dooropen
     //public Transform from;
     //public Transform to;
 
@@ -51,10 +51,13 @@ public class Door : MonoBehaviour
     {
         if (locked && playerScript.keyItem)
         {
+            audioS.PlayOneShot(clips[1]); //unlock sound
+            
             locked = false;
             playerScript.keyItem = false;
-            Debug.Log("keyfalse");
+            
         }
+       
         if (locked) {
             if (!audioS.isPlaying)
             {
@@ -62,37 +65,40 @@ public class Door : MonoBehaviour
                 ani.SetTrigger("DoorLocked");
             }
             return; } 
+      
         if (!isOpened)
         {
+            if (!audioS.isPlaying) //door open sound
+            {
+                audioS.PlayOneShot(clips[2],0.4f);
+            }
             if (DotProduct() > 0)
             {
+               
                 aniSpeed = 1f;
-               // ani.SetFloat("DoorAniSpeed", aniSpeed);
                 ani.SetTrigger("Door");
-                Debug.Log("openddd");
-                //ani.Play("Door");
 
             }
             else if (DotProduct() < 0)
             {
                 aniSpeed = -1f;
               
-                //ani.SetFloat("DoorAniSpeed", aniSpeed);
-                //ani.SetTrigger("Door-1");
-                Debug.Log("--d");
+
                 ani.Play("Door-1");
             }
-
-            //ani.SetTrigger("Door");
 
             isOpened = true;
         }
         else {
+            if (!audioS.isPlaying) //door close sound
+            {
+                audioS.PlayOneShot(clips[2],0.4f);
+            }
             if (aniSpeed == 1f)
             {
                 aniSpeed = -1f;
                 ani.SetTrigger("Door");
-  
+
                 /*   ani.SetFloat("DoorAniSpeed", aniSpeed);
                    ani.Play("Door");*/
             }
