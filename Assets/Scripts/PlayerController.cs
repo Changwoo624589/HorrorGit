@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
+    //Audio
+    private AudioSource aud;
+    public AudioClip[] clips; //[0]:cloth belt(key)
     CharacterController controller;
     public float speed = 12f;
 
@@ -33,6 +37,7 @@ public class PlayerController : MonoBehaviour
     //public bool drawerB;
     void Start()
     {
+        aud = GetComponent<AudioSource>();
         controller = GetComponent<CharacterController>();
         keyItem = false;
       //  drawerB = false;
@@ -91,6 +96,7 @@ public class PlayerController : MonoBehaviour
                 {
                     hit.transform.gameObject.SetActive(false);
                     keyItem = true;
+                    aud.PlayOneShot(clips[0]);
                 }
                 if (hit.transform.tag == "Door")
                 {
@@ -104,8 +110,12 @@ public class PlayerController : MonoBehaviour
                 {
                         panel.SetActive(true);
                 }
-                if (hit.transform.GetComponent<Frame>() != null) {
+                else if (hit.transform.GetComponent<Frame>() != null)
+                {
                     hit.transform.GetComponent<Frame>().FrameAni();
+                }
+                else if (hit.transform.GetComponent<SafeDoorPW>() != null) {
+                    hit.transform.GetComponent<SafeDoorPW>().InsertPW();
                 }
             }
             

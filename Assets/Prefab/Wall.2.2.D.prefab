@@ -192,8 +192,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.445, y: 3.2, z: 2}
-  m_Center: {x: 0, y: 1.652444, z: -1.3105348}
+  m_Size: {x: 0.445, y: 3.2, z: 2.3096418}
+  m_Center: {x: -4.719766e-15, y: 1.652444, z: -1.3321238}
 --- !u!95 &8491171934060039006
 Animator:
   serializedVersion: 3
@@ -233,6 +233,8 @@ MonoBehaviour:
   locked: 1
   clips:
   - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
+  - {fileID: 8300000, guid: 34e01fd8c12f3b542ad9951cc3f0cae8, type: 3}
+  - {fileID: 8300000, guid: c020a09dc12f02644a60e568250bf2b9, type: 3}
 --- !u!82 &5454306754001403184
 AudioSource:
   m_ObjectHideFlags: 0
