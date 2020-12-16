@@ -13,7 +13,7 @@ public class CanvasManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Cancel")) {
+        if (Input.GetButtonDown("Cancel") && GameManager.Instance.start) {
             // pausePanel.SetActive(true);
             if (!GameManager.Instance.option) {   GameManager.Instance.Pause();  }
             else { GameManager.Instance.Option(); }

@@ -47,8 +47,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        PlayerMovement();
-        Aim();
+        if (GameManager.Instance.start)
+        {
+            PlayerMovement();
+            Aim();
+        }
     }
 
     private void PlayerMovement()
