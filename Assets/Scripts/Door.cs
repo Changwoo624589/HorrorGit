@@ -74,7 +74,7 @@ public class Door : MonoBehaviour
         {
              if (!audioS.isPlaying) //door open sound
              {
-                 audioS.PlayOneShot(clips[2],0.4f);
+                 audioS.PlayOneShot(clips[2],0.1f);
              }
             //doorcreak.Play();
             if (DotProduct() > 0)
@@ -97,7 +97,7 @@ public class Door : MonoBehaviour
         else {
              if (!audioS.isPlaying) //door close sound
              {
-                 audioS.PlayOneShot(clips[2],0.4f);
+                 audioS.PlayOneShot(clips[2],0.1f);
              }
             // doorcreak_close.Play();
 

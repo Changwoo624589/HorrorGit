@@ -69,7 +69,12 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q)) {
             darkMode = !darkMode;
         }
-        DarkMode();
+        Scene currentScene = SceneManager.GetActiveScene();
+        int buildIndex = currentScene.buildIndex;
+        if (buildIndex > 0)
+        {
+            DarkMode();
+        }
     }
 
     public void Win()
@@ -144,5 +149,11 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
         }
         else { Time.timeScale = 0f; }
+    }
+    public void End() {
+        GameManager.Instance.darkMode = false;
+        GameManager.Instance.start = false;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().path);
+        SceneManager.LoadScene(0);
     }
 }
