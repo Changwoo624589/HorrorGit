@@ -21,8 +21,8 @@ public class Door : MonoBehaviour
     //public Transform from;
     //public Transform to;
 
-    public AudioSource doorcreak;
-    public AudioSource doorcreak_close;
+    //public AudioSource doorcreak;
+    //public AudioSource doorcreak_close;
     
 
     void Start()
@@ -72,11 +72,11 @@ public class Door : MonoBehaviour
       
         if (!isOpened)
         {
-            // if (!audioS.isPlaying) //door open sound
-            // {
-            //     audioS.PlayOneShot(clips[2],0.4f);
-            // }
-            doorcreak.Play();
+             if (!audioS.isPlaying) //door open sound
+             {
+                 audioS.PlayOneShot(clips[2],0.4f);
+             }
+            //doorcreak.Play();
             if (DotProduct() > 0)
             {
                
@@ -95,11 +95,11 @@ public class Door : MonoBehaviour
             isOpened = true;
         }
         else {
-            // if (!audioS.isPlaying) //door close sound
-            // {
-            //     audioS.PlayOneShot(clips[2],0.4f);
-            // }
-             doorcreak_close.Play();
+             if (!audioS.isPlaying) //door close sound
+             {
+                 audioS.PlayOneShot(clips[2],0.4f);
+             }
+            // doorcreak_close.Play();
 
             if (aniSpeed == 1f)
             {
