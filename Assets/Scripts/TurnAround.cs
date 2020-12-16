@@ -22,6 +22,9 @@ public class TurnAround : MonoBehaviour
 
     public GameObject RopeBottom;
 
+    public AudioSource gasp1;
+    bool soundPlayed = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -60,8 +63,15 @@ public class TurnAround : MonoBehaviour
 
             sr.sprite = badbun;
 
+             if (!soundPlayed)
+                {
+                    gasp1.Play();
+                    soundPlayed = true;
+                }
             GameManager.Instance.darkMode = true;
             RopeBottom.GetComponent<Rigidbody>().AddForce(transform.forward * 200, ForceMode.Acceleration);
+
+             
         }
        
     }

@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     /// 
     /// </summary>
     public bool keyItem;
+    public AudioSource keysound;
+    bool soundPlayed = false;
     //public bool drawerB;
     void Start()
     {
@@ -95,6 +97,11 @@ public class PlayerController : MonoBehaviour
                 if (hit.transform.tag == "Key")
                 {
                     hit.transform.gameObject.SetActive(false);
+                    if (!soundPlayed)
+                {
+                    keysound.Play();
+                    soundPlayed = true;
+                }
                     keyItem = true;
                     aud.PlayOneShot(clips[0]);
                 }
