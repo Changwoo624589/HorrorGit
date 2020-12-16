@@ -47,4 +47,7 @@ public class ButtonManager : MonoBehaviour
     public void CancelButton() {
         GameManager.Instance.Option();
     }
+    public void CreditButton() {
+        GameManager.Instance.Credit();
+    }
 }

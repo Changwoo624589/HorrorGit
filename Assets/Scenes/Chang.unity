@@ -2020,7 +2020,7 @@ RectTransform:
   - {fileID: 135055579}
   - {fileID: 1113074848}
   m_Father: {fileID: 479112443}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3353,10 +3353,10 @@ RectTransform:
   m_Children:
   - {fileID: 1598192205}
   - {fileID: 1561881537}
+  - {fileID: 1439751478}
   - {fileID: 1176840611}
   - {fileID: 324519915}
   - {fileID: 757307923}
-  - {fileID: 1439751478}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4916,7 +4916,7 @@ RectTransform:
   - {fileID: 569493108}
   - {fileID: 1003233829}
   m_Father: {fileID: 479112443}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5752,6 +5752,7 @@ MonoBehaviour:
   aim: {fileID: 1561881538}
   panel: {fileID: 1176840610}
   keyItem: 0
+  keysound: {fileID: 0}
 --- !u!82 &932870095
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5878,6 +5879,7 @@ MonoBehaviour:
   reglight: {fileID: 744251903}
   flickerSpeed: 0.01
   RopeBottom: {fileID: 0}
+  gasp1: {fileID: 0}
 --- !u!54 &932870097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6791,6 +6793,25 @@ Transform:
   m_Father: {fileID: 725174507}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1064527159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3632111030495182704, guid: d81e0700875f75845b3ce43aed5f263e, type: 3}
+  m_PrefabInstance: {fileID: 3349818489355093068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1064527160
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064527159}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1109214899389240085, guid: 48ce7c7d8cda4b8458f9b37ed9eebcba, type: 3}
 --- !u!4 &1084977261 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2414747355667524904, guid: 30760c0451e4deb4f87cccedbe5f9d59, type: 3}
@@ -7235,7 +7256,7 @@ RectTransform:
   m_Children:
   - {fileID: 278005541}
   m_Father: {fileID: 479112443}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8786,7 +8807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8491171934060039005, guid: 97d16376bf3278c49873f2a391e627c9, type: 3}
       propertyPath: clips.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8491171934060039005, guid: 97d16376bf3278c49873f2a391e627c9, type: 3}
       propertyPath: player
@@ -8796,6 +8817,10 @@ PrefabInstance:
       propertyPath: clips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 34e01fd8c12f3b542ad9951cc3f0cae8, type: 3}
+    - target: {fileID: 8491171934060039005, guid: 97d16376bf3278c49873f2a391e627c9, type: 3}
+      propertyPath: clips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: c020a09dc12f02644a60e568250bf2b9, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97d16376bf3278c49873f2a391e627c9, type: 3}
 --- !u!1001 &1438366391
@@ -8923,7 +8948,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 479112443}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10021,6 +10046,8 @@ MonoBehaviour:
   locked: 1
   clips:
   - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
+  doorcreak: {fileID: 0}
+  doorcreak_close: {fileID: 0}
 --- !u!95 &1644610956
 Animator:
   serializedVersion: 3
