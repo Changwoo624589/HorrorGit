@@ -127,6 +127,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (hit.transform.GetComponent<LightSwitch>() != null) {
                     hit.transform.GetComponent<LightSwitch>().LightToggle();
+                    aud.PlayOneShot(clips[1]);
                 }
             }
 
