@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance = null;
-
+    public bool start;
     public bool gameOver;
     public bool win;
     public bool pause;
     public bool darkMode;
     public bool option;
+    public bool option2;
     public bool credit;
     public float fogDensityinDarkMode;
     public float fogDensityinBrightMode;
@@ -30,8 +31,12 @@ public class GameManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         int buildIndex = currentScene.buildIndex;
         if (buildIndex == 0)
-        {  Cursor.visible = true; Cursor.lockState = CursorLockMode.None; }
-        else { Cursor.visible = false; Cursor.lockState = CursorLockMode.Locked; }
+        { 
+            Cursor.visible = true; 
+            Cursor.lockState = CursorLockMode.None;
+            start = false;
+        }
+        else { Cursor.visible = false; Cursor.lockState = CursorLockMode.Locked; start = true; }
         darkMode = false;
     }
 
@@ -48,12 +53,14 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        start = false;
         gameOver = false;
         win = false;
         pause = false;
         darkMode = false;
         option = false;
         credit = false;
+        option2 = false;
     }
 
     void Update()
@@ -103,6 +110,9 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    public void Option2() {
+        
+    }
     private void DarkMode() {
 
         if (darkMode)
@@ -127,5 +137,12 @@ public class GameManager : MonoBehaviour
         credit = !credit;
         if (credit) { Cursor.lockState = CursorLockMode.None; }
         
+    }
+    public void StartGame() {
+        if (start)
+        {
+            Time.timeScale = 1f;
+        }
+        else { Time.timeScale = 0f; }
     }
 }

@@ -10214,11 +10214,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d76a8e9ac58d454c99dff5de6dad400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 0
   gameOver: 0
   win: 0
   pause: 0
   darkMode: 0
   option: 0
+  option2: 0
   credit: 0
   fogDensityinDarkMode: 0.1
   fogDensityinBrightMode: 0.02
@@ -11601,7 +11603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932870091}
   m_LocalRotation: {x: 0, y: 0.79079646, z: -0, w: -0.61207926}
-  m_LocalPosition: {x: -14.22, y: -0.59, z: -4.61}
+  m_LocalPosition: {x: 27.2, y: 0.2, z: -25.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1516134782}
