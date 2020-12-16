@@ -75,6 +75,8 @@ public class HostDialogueControl : MonoBehaviour
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination.position, step);
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination.position, step);
 
+        yield return waitTime3; 
+
     }
 
     IEnumerator OpenSecondaryDialogue()
