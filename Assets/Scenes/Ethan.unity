@@ -4137,6 +4137,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
   - {fileID: 8300000, guid: 34e01fd8c12f3b542ad9951cc3f0cae8, type: 3}
   - {fileID: 8300000, guid: c020a09dc12f02644a60e568250bf2b9, type: 3}
+  doorcreak: {fileID: 0}
+  doorcreak_close: {fileID: 0}
 --- !u!95 &320856267
 Animator:
   serializedVersion: 3
@@ -9737,6 +9739,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7005468559558871947, guid: 0abef22e0cf4ea2499626f6390f67d78, type: 3}
   m_PrefabInstance: {fileID: 746607992}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &746666661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746666662}
+  - component: {fileID: 746666663}
+  m_Layer: 0
+  m_Name: StairCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &746666662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746666661}
+  m_LocalRotation: {x: -0.3393907, y: -0.45851067, z: -0.18322556, w: 0.8006312}
+  m_LocalPosition: {x: 0.000914, y: -0.003334, z: -0.003089}
+  m_LocalScale: {x: 0.50412, y: 1.0583979, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1047722914}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: -45.355, y: -60.206, z: 1.454}
+--- !u!65 &746666663
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746666661}
+  m_Material: {fileID: 13400000, guid: a9567331784924764b01983869ea4be4, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.004782821, y: 0.0055167433, z: 0.00024295232}
+  m_Center: {x: 0.0036469868, y: 0.005269375, z: 0.0064461227}
 --- !u!65 &746871557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11637,6 +11683,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
   - {fileID: 8300000, guid: 34e01fd8c12f3b542ad9951cc3f0cae8, type: 3}
   - {fileID: 8300000, guid: c020a09dc12f02644a60e568250bf2b9, type: 3}
+  doorcreak: {fileID: 0}
+  doorcreak_close: {fileID: 0}
 --- !u!95 &910815456
 Animator:
   serializedVersion: 3
@@ -12261,7 +12309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932870091}
   m_LocalRotation: {x: 0, y: 0.79079646, z: -0, w: -0.61207926}
-  m_LocalPosition: {x: 16.842, y: 0.094, z: -6.59}
+  m_LocalPosition: {x: 20.91, y: 0.094, z: -27.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1516134782}
@@ -12286,7 +12334,7 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: cb2ecd613307e5745ab6215045b48688, type: 3}
   speed: 5
-  gravity: -9.81
+  gravity: -1
   groundCheck: {fileID: 1748272962}
   groundDistance: 0.3
   groundMask:
@@ -12300,6 +12348,7 @@ MonoBehaviour:
   aim: {fileID: 1561881538}
   panel: {fileID: 1176840610}
   keyItem: 0
+  keysound: {fileID: 0}
 --- !u!82 &932870095
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12426,6 +12475,7 @@ MonoBehaviour:
   reglight: {fileID: 744251903}
   flickerSpeed: 0.01
   RopeBottom: {fileID: 0}
+  gasp1: {fileID: 0}
 --- !u!54 &932870097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13906,6 +13956,7 @@ Transform:
   - {fileID: 2016226655}
   - {fileID: 1901996183}
   - {fileID: 1943774227}
+  - {fileID: 746666662}
   m_Father: {fileID: 2098388374}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14998,6 +15049,8 @@ MonoBehaviour:
   locked: 1
   clips:
   - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
+  doorcreak: {fileID: 0}
+  doorcreak_close: {fileID: 0}
 --- !u!95 &1130565226
 Animator:
   serializedVersion: 3
@@ -15623,7 +15676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1176840611
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18742,6 +18795,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
   - {fileID: 8300000, guid: 34e01fd8c12f3b542ad9951cc3f0cae8, type: 3}
   - {fileID: 8300000, guid: c020a09dc12f02644a60e568250bf2b9, type: 3}
+  doorcreak: {fileID: 0}
+  doorcreak_close: {fileID: 0}
 --- !u!95 &1455228710
 Animator:
   serializedVersion: 3
@@ -19209,6 +19264,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
   - {fileID: 8300000, guid: 34e01fd8c12f3b542ad9951cc3f0cae8, type: 3}
   - {fileID: 8300000, guid: c020a09dc12f02644a60e568250bf2b9, type: 3}
+  doorcreak: {fileID: 0}
+  doorcreak_close: {fileID: 0}
 --- !u!95 &1489634026
 Animator:
   serializedVersion: 3
@@ -20919,6 +20976,8 @@ MonoBehaviour:
   locked: 1
   clips:
   - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
+  doorcreak: {fileID: 0}
+  doorcreak_close: {fileID: 0}
 --- !u!95 &1644610956
 Animator:
   serializedVersion: 3
@@ -25324,6 +25383,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a43c6571bf287c9409fb2f9d25bbf386, type: 3}
   - {fileID: 8300000, guid: 34e01fd8c12f3b542ad9951cc3f0cae8, type: 3}
   - {fileID: 8300000, guid: c020a09dc12f02644a60e568250bf2b9, type: 3}
+  doorcreak: {fileID: 0}
+  doorcreak_close: {fileID: 0}
 --- !u!95 &2036594613
 Animator:
   serializedVersion: 3
