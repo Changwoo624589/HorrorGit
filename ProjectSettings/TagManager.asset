@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Key
+  - Door
+  - turnaround
+  - Wall
+  - Paper
   layers:
   - Default
   - TransparentFX
@@ -41,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: AboveUI
+    uniqueID: 2240899991
     locked: 0
