@@ -14,6 +14,8 @@ public class ButtonManager : MonoBehaviour
 
     public void StartButton() {
         // SceneManager.LoadScene(1);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         GameManager.Instance.start = true;
     }
 

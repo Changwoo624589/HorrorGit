@@ -107,25 +107,27 @@ public class PlayerController : MonoBehaviour
                 if (hit.transform.tag == "Key")
                 {
                     hit.transform.gameObject.SetActive(false);
-                
-                  
-                
+
+
+
                     keyItem = true;
                     aud.PlayOneShot(clips[0]);
                 }
-
-
-                if(hit.transform.tag == "Paper")
+                else if (hit.transform.tag == "Paper")
                 {
-                        panel.SetActive(true);
+                    panel.SetActive(true);
                 }
                 else if (hit.transform.GetComponent<Frame>() != null)
                 {
                     hit.transform.GetComponent<Frame>().FrameAni();
                 }
-                else if (hit.transform.GetComponent<SafeDoorPW>() != null) {
+                else if (hit.transform.GetComponent<SafeDoorPW>() != null)
+                {
                     hit.transform.GetComponent<SafeDoorPW>().InsertPW();
-                } 
+                }
+                else if (hit.transform.GetComponent<LightSwitch>() != null) {
+                    hit.transform.GetComponent<LightSwitch>().LightToggle();
+                }
             }
 
             if (Input.GetButtonDown("Fire2"))
