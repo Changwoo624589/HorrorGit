@@ -45,7 +45,7 @@ public class GoatDialogueControl : MonoBehaviour
         dialoguePanel.SetActive(true);
 
 
-        WaitForSeconds waitTime2 = new WaitForSeconds(5);
+        WaitForSeconds waitTime2 = new WaitForSeconds(2);
         yield return waitTime2;
         dialoguePanel.SetActive(false);
 

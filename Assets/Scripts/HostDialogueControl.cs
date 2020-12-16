@@ -9,6 +9,9 @@ public class HostDialogueControl : MonoBehaviour
 
     public GameObject dialoguePanel2;
 
+    public GameObject dialoguePanel3;
+    public GameObject dialoguePanel4;
+
     public Transform destination;
 
     
@@ -33,6 +36,13 @@ public class HostDialogueControl : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
             {
                 StartCoroutine(OpenDialogue());
+                
+            }
+
+            if(Input.GetKey(KeyCode.Space) && PlayerController.rightHallTriggerCount >= 1)
+            {
+                StopCoroutine(OpenDialogue());
+                StartCoroutine(OpenSecondaryDialogue());
                 
             }
         }
@@ -65,8 +75,24 @@ public class HostDialogueControl : MonoBehaviour
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination.position, step);
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, destination.position, step);
 
+    }
 
+    IEnumerator OpenSecondaryDialogue()
+    {
+        WaitForSeconds waitTime = new WaitForSeconds(1);
+        yield return waitTime;
+        dialoguePanel3.SetActive(true);
 
+        WaitForSeconds waitTime2 = new WaitForSeconds(3);
+        yield return waitTime2;
+        dialoguePanel3.SetActive(false);
+        dialoguePanel4.SetActive(true);
+
+        WaitForSeconds waitTime3 = new WaitForSeconds(5);
+        yield return waitTime3;
+        dialoguePanel4.SetActive(false);
+
+        
     }
 
 }

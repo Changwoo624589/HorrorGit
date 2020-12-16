@@ -36,6 +36,12 @@ public class PlayerController : MonoBehaviour
     public Transform assistant; 
     public Transform assistantDestination;
 
+    public static int rightHallTriggers;
+    public static int rightHallTriggerCount;
+
+    public Transform host;
+    public Transform hostDestination;
+
     public GameObject assistant2; 
 
     /// <summary>
@@ -56,8 +62,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        assistantDestination = GameObject.Find("Destination").transform; 
-
         if (GameManager.Instance.start)
         {
             PlayerMovement();
@@ -68,6 +72,9 @@ public class PlayerController : MonoBehaviour
             panel.SetActive(false);
             paper2.SetActive(false); 
         }
+
+        assistantDestination = GameObject.Find("Destination").transform;
+        hostDestination = GameObject.Find("HostDestination").transform;
     }
 
     private void PlayerMovement()
@@ -172,6 +179,16 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(WaitForPlayerToLeave());
                
                 //Instantiate(assistant, assistantDestination.position, Quaternion.identity);
+            }
+        }
+        if(other.gameObject.tag == "HostTeleportTrigger1")
+        {
+            rightHallTriggerCount += 1;
+            rightHallTriggers++;
+
+            if (rightHallTriggerCount >=1 )
+            {
+                host.transform.position = hostDestination.position; 
             }
         }
     }

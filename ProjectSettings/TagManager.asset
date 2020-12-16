@@ -12,6 +12,7 @@ TagManager:
   - CanTalkWith
   - Paper2
   - TeleportTrigger
+  - HostTeleportTrigger1
   layers:
   - Default
   - TransparentFX
