@@ -9,6 +9,7 @@ TagManager:
   - turnaround
   - Wall
   - Paper
+  - CanTalkWith
   layers:
   - Default
   - TransparentFX
