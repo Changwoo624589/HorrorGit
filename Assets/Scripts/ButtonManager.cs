@@ -15,6 +15,8 @@ public class ButtonManager : MonoBehaviour
     public void StartButton() {
         // SceneManager.LoadScene(1);
         GameManager.Instance.start = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void ResumeButton() {
