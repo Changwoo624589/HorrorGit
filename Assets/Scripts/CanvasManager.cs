@@ -32,6 +32,6 @@ public class CanvasManager : MonoBehaviour
         else {
             optionPanel.SetActive(false);
         }
-   
+        
     }
 }

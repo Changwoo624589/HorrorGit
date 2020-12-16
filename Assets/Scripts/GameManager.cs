@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public bool pause;
     public bool darkMode;
     public bool option;
-
+    public bool credit;
     public float fogDensityinDarkMode;
     public float fogDensityinBrightMode;
 
@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         pause = false;
         darkMode = false;
         option = false;
+        credit = false;
     }
 
     void Update()
@@ -95,7 +96,7 @@ public class GameManager : MonoBehaviour
     }
     public void Option() {
         option = !option;
-        if (option)
+        if (option && pause)
         {
             Time.timeScale = 0.001f;
             Cursor.lockState = CursorLockMode.None;
@@ -120,5 +121,11 @@ public class GameManager : MonoBehaviour
             RenderSettings.ambientLight = new Color32(231,213,185,255); // hex = #FFFFFF  
             //231 , 213,185 yellow
         }
+    }
+
+    public void Credit() {
+        credit = !credit;
+        if (credit) { Cursor.lockState = CursorLockMode.None; }
+        
     }
 }
