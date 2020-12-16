@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
             start = false;
         }
         else { Cursor.visible = false; Cursor.lockState = CursorLockMode.Locked; start = true; }
-        darkMode = false;
+        darkMode = false; 
     }
 
     public static GameManager Instance
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        start = false;
+        //start = false;
         gameOver = false;
         win = false;
         pause = false;
