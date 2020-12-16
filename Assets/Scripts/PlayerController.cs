@@ -28,7 +28,8 @@ public class PlayerController : MonoBehaviour
     
     public Image aim;
 
-    public GameObject panel; 
+    public GameObject panel;
+    public GameObject paper2;
 
     /// <summary>
     /// 
@@ -51,6 +52,11 @@ public class PlayerController : MonoBehaviour
         {
             PlayerMovement();
             Aim();
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            panel.SetActive(false);
+            paper2.SetActive(false); 
         }
     }
 
@@ -117,6 +123,11 @@ public class PlayerController : MonoBehaviour
                 {
                     panel.SetActive(true);
                 }
+
+                else if (hit.transform.tag == "Paper2")
+                {
+                    paper2.SetActive(true); 
+                }
                 else if (hit.transform.GetComponent<Frame>() != null)
                 {
                     hit.transform.GetComponent<Frame>().FrameAni();
@@ -131,13 +142,8 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonDown("Fire2"))
-            {
-                panel.SetActive(false);
-            }
-            
         }
-        
+
         else { aim.color = new Color32(255, 255, 255, 40); }
 
     }
