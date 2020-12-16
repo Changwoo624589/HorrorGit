@@ -121,7 +121,12 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (hit.transform.GetComponent<SafeDoorPW>() != null) {
                     hit.transform.GetComponent<SafeDoorPW>().InsertPW();
-                }
+                } 
+            }
+
+            if (Input.GetButtonDown("Fire2"))
+            {
+                panel.SetActive(false);
             }
             
         }
