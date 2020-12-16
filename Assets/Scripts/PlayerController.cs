@@ -31,6 +31,13 @@ public class PlayerController : MonoBehaviour
     public GameObject panel;
     public GameObject paper2;
 
+    public static int triggers;
+    public static float triggerCount; 
+    public Transform assistant; 
+    public Transform assistantDestination;
+
+    public GameObject assistant2; 
+
     /// <summary>
     /// 
     /// </summary>
@@ -48,6 +55,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+
+        assistantDestination = GameObject.Find("Destination").transform; 
+
         if (GameManager.Instance.start)
         {
             PlayerMovement();
@@ -145,6 +155,33 @@ public class PlayerController : MonoBehaviour
         }
 
         else { aim.color = new Color32(255, 255, 255, 40); }
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "TeleportTrigger")
+        {
+            Debug.Log("hit");
+            Debug.Log(triggerCount); 
+            triggerCount += 1;
+            triggers++; 
+
+            if(triggerCount >= 1)
+            {
+                StartCoroutine(WaitForPlayerToLeave());
+               
+                //Instantiate(assistant, assistantDestination.position, Quaternion.identity);
+            }
+        }
+    }
+
+    IEnumerator WaitForPlayerToLeave()
+    {
+        WaitForSeconds waitTime = new WaitForSeconds(3);
+        yield return waitTime;
+
+        assistant2.transform.position = assistantDestination.position;
 
     }
 
