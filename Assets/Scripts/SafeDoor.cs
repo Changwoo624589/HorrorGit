@@ -22,7 +22,7 @@ public class SafeDoor : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(pws[0].pw);
+        //Debug.Log(pws[0].pw);
         if (
         pws[0].pw ==6 &&
         pws[1].pw ==2 &&

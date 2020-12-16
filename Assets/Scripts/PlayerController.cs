@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     /// 
     /// </summary>
     public bool keyItem;
-    public AudioSource keysound;
+   // public AudioSource keysound;
     
     //public bool drawerB;
     void Start()
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
         if (hit.transform.gameObject.layer  == LayerMask.NameToLayer("Hitable")&& hitting)
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);//transform name        33333333333333333333333333333333333
             aim.color = new Color32(255, 200, 0, 255);
             Drawer drawer = hit.transform.GetComponent<Drawer>();
            
@@ -93,16 +93,7 @@ public class PlayerController : MonoBehaviour
                
                 if (drawer != null) 
                 { drawer.isOpened = !drawer.isOpened; }
-               
-                if (hit.transform.tag == "Key")
-                {
-                    hit.transform.gameObject.SetActive(false);
-                
-                    keysound.Play();
-                
-                    keyItem = true;
-                    // aud.PlayOneShot(clips[0]);
-                }
+
                 if (hit.transform.tag == "Door")
                 {
                     if (hit.transform.GetComponent<Door>() != null)
@@ -110,6 +101,16 @@ public class PlayerController : MonoBehaviour
                         hit.transform.GetComponent<Door>().DoorOpenClose();
                     }
                 }
+                if (hit.transform.tag == "Key")
+                {
+                    hit.transform.gameObject.SetActive(false);
+                
+                  
+                
+                    keyItem = true;
+                    aud.PlayOneShot(clips[0]);
+                }
+
 
                 if(hit.transform.tag == "Paper")
                 {
