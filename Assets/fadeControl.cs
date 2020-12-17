@@ -19,7 +19,7 @@ public class fadeControl : MonoBehaviour
       
     }
 
-    public IEnumerator FadeToBlack(bool fadeToBlack = true, int fadeSpeed = 5)
+    public  IEnumerator FadeToBlack(bool fadeToBlack = true, int fadeSpeed = 5)
     {
         Color objectColor = fadePanel.GetComponent<Image>().color;
         float fadeAmount;

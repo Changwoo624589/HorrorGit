@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
             paper2.SetActive(false); 
         }
 
+        //assistantDestination = GameObject.Find("Destination").transform;
         assistantDestination = GameObject.Find("Destination").transform;
         hostDestination = GameObject.Find("HostDestination").transform;
     }

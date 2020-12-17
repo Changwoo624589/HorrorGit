@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8585787318967648899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8585787318967648896}
+  - component: {fileID: 8585787318967648897}
+  m_Layer: 0
+  m_Name: StairCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8585787318967648896
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585787318967648899}
+  m_LocalRotation: {x: -0.3393907, y: -0.45851067, z: -0.18322556, w: 0.8006312}
+  m_LocalPosition: {x: 0.000914, y: -0.003334, z: -0.003089}
+  m_LocalScale: {x: 0.50412, y: 1.0583979, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -45.355, y: -60.206, z: 1.454}
+--- !u!65 &8585787318967648897
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585787318967648899}
+  m_Material: {fileID: 13400000, guid: a9567331784924764b01983869ea4be4, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.004782821, y: 0.0055167433, z: 0.00024295232}
+  m_Center: {x: 0.0036469868, y: 0.005269375, z: 0.0064461227}
