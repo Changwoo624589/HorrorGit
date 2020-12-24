@@ -25,6 +25,9 @@ public class TurnAround : MonoBehaviour
     public AudioSource gasp1;
     bool soundPlayed = false;
 
+    public GameObject location2; 
+    public GameObject bunny;
+
     // Update is called once per frame
     void Update()
     {
@@ -54,12 +57,16 @@ public class TurnAround : MonoBehaviour
 
     }
 
-    public void OnCollisionEnter(Collision col)
+    public void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "turnaround")
         {
+    
+
             ChangeMaterials(darkWalls);
-            StartCoroutine(Blink(flickerSpeed));  
+            StartCoroutine(Blink(flickerSpeed));
+
+            bunny.transform.position = new Vector3(-15.3f, 0.98f, -3.48f);
 
             sr.sprite = badbun;
 
